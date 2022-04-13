@@ -1,0 +1,15 @@
+// Main page
+
+// Mixins imports
+@import "./mixins/flexbox/flexbox";
+@import "./mixins/respond-to/respond-to";
+
+// Variables imports
+@import "./variables/sizes/sizes";
+@import "./variables/themes/dark/theme-dark";
+@import "./variables/themes/light/theme-light";
+
+// Components imports
+@import "./components/default/default";
+@import "./components/sidebar/sidebar";
+

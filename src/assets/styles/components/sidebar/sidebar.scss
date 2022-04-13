@@ -1,0 +1,105 @@
+// Sidebar styles
+
+// Mixins imports
+@import "../../mixins/flexbox/flexbox";
+@import "../../mixins/respond-to/respond-to";
+
+// Variables imports
+@import "../../variables/sizes/sizes";
+@import "../../variables/themes/dark/theme-dark";
+@import "../../variables/themes/light/theme-light";
+
+// Sidebar
+.sidebar {
+  @include flexbox(flex, column, start, start);
+
+  background-color: #1F2339;
+  height: 100vh;
+  width: 241px;
+
+  &__item, &__item-active{
+    @include flexbox(flex, row, center, start);
+
+    width: 100%;
+    margin-bottom: 25px;
+    text-decoration: none;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+
+    &-img {
+
+    }
+
+    &-text {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+
+      margin-left: 10px;
+    }
+  }
+
+  &__wrapper {
+    @include flexbox(flex, column, center, center);
+  }
+
+  &__wrapper__top {
+    margin: 32px 20px 127px 20px;
+
+    .sidebar__item-active {
+      .sidebar__item-text{
+        font-weight: 600;
+        color: aqua;
+      }
+    }
+  }
+
+  &__wrapper__bottom {
+    margin: 0 20px;
+  }
+}
+
+// Adaptation
+@include respond-to('Laptop L') {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@include respond-to('Laptop') {
+  .sidebar {
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+
+    &__wrapper__top {
+      margin: 32px 20px 127px 20px;
+    }
+
+    &__item {
+
+      &-text {
+        display: none;
+      }
+
+      &-img {
+        width: 45px;
+      }
+    }
+  }
+}
+
+@include respond-to('Tablet') {
+  .sidebar {
+    width: 80px;
+  }
+}
+
+@include respond-to('Large mobile device') {
+  .sidebar {
+    width: 70px;
+  }
+}

@@ -1,0 +1,8 @@
+// Mixin for build flexbox containers
+
+@mixin flexbox ($display, $f-direct, $alg-itm, $js-tf-cont) {
+  display: $display;
+  flex-direction: $f-direct;
+  align-items: $alg-itm;
+  justify-content: $js-tf-cont;
+}

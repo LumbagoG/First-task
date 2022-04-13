@@ -1,0 +1,15 @@
+@import "../../variables/breakpoints/breakpoints";
+
+@mixin respond-to($breakpoint) {
+
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+		@content;
+		}
+	}
+
+	@else {
+		@warn "Такого значение $breakpoint не было найдено - `#{$breakpoint}`. "
+			+ "Доступные breakpoints: #{map-keys($breakpoints)}.";
+	}
+}
