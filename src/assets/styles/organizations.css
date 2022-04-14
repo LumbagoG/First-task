@@ -19,6 +19,15 @@ body {
   overflow-x: hidden;
 }
 
+#date-alert {
+  position: fixed;
+  z-index: 10000;
+  width: 100vw;
+  bottom: 10px;
+  right: 10px;
+  text-align: right;
+}
+
 @media (max-width: 425px) {
   body {
     flex-direction: column;

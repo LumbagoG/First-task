@@ -27,6 +27,15 @@ body {
   overflow-x: hidden;
 }
 
+#date-alert {
+  position: fixed;
+  z-index: 10000;
+  width: 100vw;
+  bottom: 10px;
+  right: 10px;
+  text-align: right;
+}
+
 // Adaptation
 @include respond-to('Tablet') {
   body {
