@@ -13,9 +13,12 @@
 .sidebar {
   @include flexbox(flex, column, start, start);
 
+  position: sticky;
   background-color: #1F2339;
   height: 100vh;
-  width: 241px;
+  width: 296px;
+  top: 0;
+  z-index: 1000;
 
   &__item, &__item-active{
     @include flexbox(flex, row, center, start);
@@ -44,21 +47,21 @@
 
   &__wrapper {
     @include flexbox(flex, column, center, center);
-  }
 
-  &__wrapper__top {
-    margin: 32px 20px 127px 20px;
+    &__top {
+      margin: 32px 20px 127px 20px;
 
-    .sidebar__item-active {
-      .sidebar__item-text{
-        font-weight: 600;
-        color: aqua;
+      .sidebar__item-active {
+        .sidebar__item-text{
+          font-weight: 600;
+          color: aqua;
+        }
       }
     }
-  }
 
-  &__wrapper__bottom {
-    margin: 0 20px;
+    &__bottom {
+      margin: 0 20px;
+    }
   }
 }
 
@@ -97,6 +100,8 @@
     width: 80px;
   }
 }
+
+
 
 @include respond-to('Large mobile device') {
   .sidebar {

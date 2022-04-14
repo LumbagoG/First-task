@@ -5,17 +5,67 @@
 
 // Mixins imports
 @import "../../mixins/flexbox/flexbox";
+@import "../../mixins/respond-to/respond-to";
 
+// Styles to all elements
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', serif;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #fff;
 }
 
+// Body
 body {
   @include flexbox(flex, row, start, start);
 
   background-color: #4D5474;
+  overflow-x: hidden;
+}
+
+// Adaptation
+@include respond-to('Tablet') {
+  body {
+    flex-direction: column;
+
+    // Sidebar
+    .sidebar {
+      @include flexbox(flex, row, center, center);
+
+      flex-wrap: wrap;
+      width: 100%;
+      height: 200px;
+
+      &__wrapper {
+        @include flexbox(flex, row, center, center);
+
+        position: relative;
+
+        &:first-child, &:last-child {
+          width: 100%;
+        }
+
+        .sidebar__item, .sidebar__item-active {
+          justify-content: center !important;
+          align-items: center !important;
+          height: 100px;
+          margin: 0 2px;
+
+          img {
+            width: 35px;
+          }
+        }
+      }
+
+      &__wrapper__top {
+        @include flexbox(flex, row, center, center);
+        margin: 0;
+      }
+    }
+  }
+
 }

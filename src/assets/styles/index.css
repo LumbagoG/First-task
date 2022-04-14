@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
   font-family: "Open Sans", serif;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #fff;
 }
 
@@ -13,16 +16,60 @@ body {
   align-items: start;
   justify-content: start;
   background-color: #4D5474;
+  overflow-x: hidden;
 }
 
+@media (max-width: 425px) {
+  body {
+    flex-direction: column;
+  }
+  body .sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 200px;
+  }
+  body .sidebar__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  body .sidebar__wrapper:first-child, body .sidebar__wrapper:last-child {
+    width: 100%;
+  }
+  body .sidebar__wrapper .sidebar__item, body .sidebar__wrapper .sidebar__item-active {
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100px;
+    margin: 0 2px;
+  }
+  body .sidebar__wrapper .sidebar__item img, body .sidebar__wrapper .sidebar__item-active img {
+    width: 35px;
+  }
+  body .sidebar__wrapper__top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+}
 .sidebar {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: start;
+  position: sticky;
   background-color: #1F2339;
   height: 100vh;
-  width: 241px;
+  width: 296px;
+  top: 0;
+  z-index: 1000;
 }
 .sidebar__item, .sidebar__item-active {
   display: flex;
@@ -89,6 +136,410 @@ body {
 @media (max-width: 375px) {
   .sidebar {
     width: 70px;
+  }
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 75px 68px 40px;
+}
+.main__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.main__header__title {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+}
+.main__header__title-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+}
+.main__header__title__status {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #43E8FF;
+  margin-left: 17px;
+}
+.main__header__options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.main__header__options__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.main__header__options__wrapper:last-of-type {
+  margin-left: 30px;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    justify-content: start;
+    align-items: start;
+    padding: 20px 20px 20px 20px;
+  }
+  .main__header {
+    width: 100%;
+  }
+  .main__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+  .main__content .reports {
+    width: 370px !important;
+    height: 400px;
+  }
+  .main__content .reports img {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .main__header {
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 425px) {
+  .main__header {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+}
+.main__content {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 103%;
+  margin-top: 20px;
+}
+.main__content__wrapper {
+  background: #383E57;
+  box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 15.5px;
+  width: 340px;
+  height: 230px;
+}
+.main__content .working-with-fields {
+  background-image: url("../images/main_page/oceanology.svg");
+  background-repeat: no-repeat;
+  background-position: 80% 70%;
+}
+.main__content .harvest-statistics {
+  background-image: url("../images/main_page/map.svg");
+  background-repeat: no-repeat;
+  background-position: 80% 70%;
+}
+.main__content .weather {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+.main__content .weather .main__content__wrapper__text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+.main__content .weather .main__content-text-lg {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 109px;
+  /* identical to box height */
+  letter-spacing: -0.05em;
+  margin-left: 20px;
+}
+.main__content .weather .main__content-text-lg sup {
+  position: absolute;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 49px;
+}
+.main__content .reports {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  width: 710px;
+}
+.main__content .reports .main__image-mobile {
+  display: none;
+}
+.main__content .reports div {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.main__content .reports .main__content__wrapper__reports {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.main__content .reports .main__content__wrapper__reports__table {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  width: 374px;
+}
+.main__content .reports .main__content__wrapper__reports__table-row {
+  padding: 10px 15px;
+  border: 1px none #151E41;
+  border-bottom-style: solid;
+}
+.main__content .reports .main__content__wrapper__reports__table-row:last-child {
+  border-bottom-style: none;
+}
+.main__content .reports .main__content__wrapper__reports__table .left .main__content__wrapper__reports__table-row {
+  padding-left: 0;
+  border: 1px none #151E41;
+  border-right-style: solid;
+  border-bottom-style: solid;
+}
+.main__content .reports .main__content__wrapper__reports__table .left .main__content__wrapper__reports__table-row:first-child {
+  border-right-style: none;
+}
+.main__content .reports .main__content__wrapper__reports__table .left .main__content__wrapper__reports__table-row:last-child {
+  border-bottom-style: none;
+}
+.main__content .reports .main__content__wrapper__reports__table .right .main__content__wrapper__reports__table-row {
+  padding-right: 0;
+  border: 1px none #151E41;
+  border-left-style: solid;
+  border-bottom-style: solid;
+}
+.main__content .reports .main__content__wrapper__reports__table .right .main__content__wrapper__reports__table-row:first-child {
+  border-left-style: none;
+}
+.main__content .reports .main__content__wrapper__reports__table .right .main__content__wrapper__reports__table-row:last-of-type {
+  border-bottom-style: none;
+}
+.main__content .reports .main__content__wrapper__chart {
+  margin-right: 10px;
+}
+.main__content .staff {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.main__content .staff-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.main__content .staff-wrapper:first-child {
+  margin-bottom: 10px;
+}
+.main__content .staff-wrapper:last-child {
+  margin-top: 10px;
+}
+.main__content .staff-wrapper img:first-child {
+  margin-right: 15px;
+}
+.main__content .millet-statistics {
+  width: 525px;
+  height: 270px;
+}
+.main__content .millet-statistics .main__content__wrapper__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.main__content .millet-statistics .main__content__wrapper__title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+}
+.main__content .millet-statistics .main__content__wrapper__title-list {
+  list-style-position: outside;
+  margin-left: 20px;
+  margin-top: 21px;
+}
+.main__content .millet-statistics .main__content__wrapper__title-list:first-of-type {
+  list-style-image: url("/src/assets/images/main_page/list-img-1.svg");
+}
+.main__content .millet-statistics .main__content__wrapper__title-list:last-of-type {
+  list-style-image: url("/src/assets/images/main_page/list-img-2.svg");
+}
+.main__content .millet-statistics .main__content__wrapper__title-list-li {
+  margin-bottom: 20px;
+}
+.main__content .millet-statistics .main__content__wrapper__title-list .text-light {
+  margin-bottom: 3px;
+}
+.main__content .millet-statistics .main__content__wrapper__title-list .main__content-title {
+  margin-bottom: 5px;
+}
+.main__content .millet-statistics .main__content__wrapper__title-diagram {
+  margin-right: 50px;
+}
+.main__content .millet-statistics .main__content-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+.main__content .millet-statistics .main__content-link img {
+  margin-left: 10px;
+}
+.main__content .leased-equipment {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  width: 525px;
+  height: 270px;
+}
+.main__content .leased-equipment .main__content__wrapper-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+.main__content .leased-equipment .main__content__wrapper-col:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.main__content .leased-equipment .main__content__wrapper-col:first-child div {
+  margin-top: 20px;
+}
+.main__content .leased-equipment .main__content__wrapper-col:first-child div:first-child {
+  margin-top: 0;
+}
+.main__content .leased-equipment .main__content__wrapper-col-statistic {
+  width: 285px;
+}
+.main__content .leased-equipment .main__content__wrapper__title__wrapper-list {
+  list-style-position: outside;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.main__content .leased-equipment .main__content__wrapper__title__wrapper-list .main__content__wrapper__title-list:first-of-type {
+  list-style-image: url("/src/assets/images/main_page/list-img-2.svg");
+  margin-top: 20px;
+}
+.main__content .leased-equipment .main__content__wrapper__title__wrapper-list-li {
+  margin-bottom: 20px;
+}
+.main__content .leased-equipment .main__content__wrapper__title__wrapper-list .text-light {
+  margin-bottom: 3px;
+}
+.main__content .leased-equipment .main__content__wrapper__title__wrapper-list .main__content-title {
+  margin-bottom: 5px;
+}
+.main__content .text-light {
+  color: #A1A6BE;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+.main__content-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+.main__content-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+.main__content-link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #43E8FF;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .main__content {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .main__content__wrapper__chart {
+    width: 330px !important;
+  }
+
+  .main__image-mobile {
+    display: block !important;
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .main__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .main__content .millet-statistics {
+    height: 500px;
+  }
+  .main__content .millet-statistics .main__content__wrapper__title {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main__content .millet-statistics .main__content__wrapper__title-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main__content .millet-statistics .main__content__wrapper__title-diagram {
+    margin: 20px 0;
+  }
+  .main__content .leased-equipment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+  }
+  .main__content .leased-equipment * {
+    justify-content: center !important;
+    align-items: center !important;
   }
 }
 

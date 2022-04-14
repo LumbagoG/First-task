@@ -12,4 +12,357 @@
 // Components imports
 @import "./components/default/default";
 @import "./components/sidebar/sidebar";
+@import "./components/header/header";
+
+// Content
+.main__content {
+  @include flexbox(flex, row, start, start);
+  flex-wrap: wrap;
+
+  width: 103%;
+  margin-top: 20px;
+
+  // Wrapper
+  &__wrapper {
+    background: #383E57;
+    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 18px;
+    padding: 20px;
+    margin: 15.5px;
+    width: 340px;
+    height: 230px;
+  }
+
+  // Working with fields
+  & .working-with-fields{
+    background-image: url("../images/main_page/oceanology.svg");
+    background-repeat: no-repeat;
+    background-position: 80% 70%;
+  }
+
+  // Harvest statistics
+  & .harvest-statistics {
+    background-image: url("../images/main_page/map.svg");
+    background-repeat: no-repeat;
+    background-position: 80% 70%;
+  }
+
+  // Weather
+  & .weather {
+    @include flexbox(flex, column, start, space-between);
+
+    .main__content__wrapper__text {
+      @include flexbox(flex, row, center, space-between);
+
+      width: 70%;
+    }
+
+    .main__content-text-lg {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 80px;
+      line-height: 109px;
+      /* identical to box height */
+      letter-spacing: -0.05em;
+      margin-left: 20px;
+
+      & sup {
+        position: absolute;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 49px;
+      }
+    }
+  }
+
+  // Reports and statistic
+  & .reports {
+    @include flexbox(flex, row, space-between, space-between);
+
+    width: 710px;
+
+    .main__image-mobile {
+      display: none;
+    }
+
+    & div {
+      @include flexbox(flex, column, space-between, space-between);
+    }
+
+    // Wrapper table
+    & .main__content__wrapper__reports {
+      @include flexbox(flex, column, space-between, space-between);
+
+      &__table {
+        @include flexbox(flex, row, start, start);
+
+        width: 374px;
+
+        &-row {
+          padding: 10px 15px;
+          border: 1px none #151E41;
+          border-bottom-style: solid;
+
+          &:last-child {
+            border-bottom-style: none;
+          }
+        }
+
+        .left {
+          .main__content__wrapper__reports__table-row {
+            padding-left: 0;
+
+            border: 1px none #151E41;
+            border-right-style: solid;
+            border-bottom-style: solid;
+
+            &:first-child {
+              border-right-style: none;
+            }
+
+            &:last-child {
+              border-bottom-style: none;
+            }
+          }
+        }
+
+        .right {
+          .main__content__wrapper__reports__table-row {
+            padding-right: 0;
+
+            border: 1px none #151E41;
+            border-left-style: solid;
+            border-bottom-style: solid;
+
+            &:first-child {
+              border-left-style: none;
+            }
+
+            &:last-of-type {
+              border-bottom-style: none;
+            }
+          }
+        }
+      }
+    }
+
+    & .main__content__wrapper__chart {
+      margin-right: 10px;
+    }
+  }
+
+  // Staff
+  & .staff {
+    @include flexbox(flex, column, space-between, space-between);
+
+    &-wrapper {
+      @include flexbox(flex, row, space-between, space-between);
+
+      &:first-child {
+        margin-bottom: 10px;
+      }
+
+      &:last-child {
+        margin-top: 10px;
+      }
+
+      & img:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  // Millet statistics
+  & .millet-statistics {
+    width: 525px;
+    height: 270px;
+
+    & .main__content__wrapper__title {
+      @include flexbox(flex, row, center, space-between);
+
+      &-row {
+        @include flexbox(flex, row, start, space-between);
+
+        width: 100%;
+      }
+
+      &-list {
+        list-style-position: outside;
+        margin-left: 20px;
+        margin-top: 21px;
+
+        &:first-of-type  {
+          list-style-image: url("/src/assets/images/main_page/list-img-1.svg");
+        }
+
+        &:last-of-type {
+          list-style-image: url("/src/assets/images/main_page/list-img-2.svg");
+        }
+
+        &-li {
+          margin-bottom: 20px;
+        }
+
+        .text-light {
+          margin-bottom: 3px;
+        }
+
+        .main__content-title {
+          margin-bottom: 5px;
+        }
+      }
+
+      &-diagram {
+        margin-right: 50px;
+      }
+    }
+
+    .main__content-link {
+      @include flexbox(flex, row, center, start);
+
+      & img {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  // Leased equipment
+  & .leased-equipment {
+    @include flexbox(flex, row, start, space-between);
+    width: 525px;
+    height: 270px;
+
+    & .main__content__wrapper-col {
+      @include flexbox(flex, row, center, start);
+
+      &:first-child {
+        @include flexbox(flex, column, space-between, space-between);
+
+        & div {
+          margin-top: 20px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      &-statistic {
+        width: 285px;
+      }
+    }
+
+    & .main__content__wrapper__title__wrapper-list {
+      list-style-position: outside;
+      margin-left: 20px;
+      margin-top: 10px;
+
+      .main__content__wrapper__title-list:first-of-type  {
+        list-style-image: url("/src/assets/images/main_page/list-img-2.svg");
+        margin-top: 20px;
+      }
+
+      &-li {
+        margin-bottom: 20px;
+      }
+
+      .text-light {
+        margin-bottom: 3px;
+      }
+
+      .main__content-title {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+
+  .text-light {
+    color: #A1A6BE;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  &-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &-link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #43E8FF;
+    text-decoration: none;
+  }
+}
+
+// Adaptation
+@include respond-to('Laptop L') {
+  .main__content {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .main__content__wrapper__chart {
+    width: 330px !important;
+  }
+
+  .main__image-mobile {
+    display: block !important;
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+
+@include respond-to('Laptop') {
+  .main__content {
+    @include flexbox(flex, row, center, center);
+
+    // Статистика пшена на полях ЦАО
+    .millet-statistics {
+      height: 500px;
+
+      .main__content__wrapper__title {
+        flex-direction: column;
+        justify-content: center;
+
+        &-row {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &-diagram {
+          margin: 20px 0;
+        }
+      }
+    }
+
+    // Арендуемая техника
+    .leased-equipment {
+      @include flexbox(flex, column, center, center);
+
+      height: 550px;
+
+      * {
+        justify-content: center !important;
+        align-items: center !important;
+      }
+    }
+  }
+}
 
