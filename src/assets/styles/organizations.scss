@@ -1,0 +1,99 @@
+// Organizations page
+
+// Mixins imports
+@import "./mixins/flexbox/flexbox";
+@import "./mixins/respond-to/respond-to";
+
+// Variables imports
+@import "./variables/sizes/sizes";
+@import "./variables/themes/dark/theme-dark";
+@import "./variables/themes/light/theme-light";
+
+// Components imports
+@import "./components/default/default";
+@import "./components/sidebar/sidebar";
+@import "./components/header/header";
+
+// Content
+.main__content {
+  @include flexbox(flex, row, start, start);
+  flex-wrap: wrap;
+
+  width: 100%;
+  margin-top: 20px;
+
+  // Wrapper
+  &__wrapper {
+    background: #383E57;
+    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 18px;
+    padding: 20px;
+    margin: 15.5px;
+    width: 340px;
+    height: 230px;
+  }
+}
+
+// Adaptation
+@include respond-to('Laptop L') {
+  .main__content {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .main__header {
+    @include flexbox(flex, column, center, space-between);
+    height: 100px;
+  }
+
+  .main__header__options {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+      margin-top: 20px;
+    }
+  }
+}
+
+@include respond-to('Laptop') {
+  .main__content {
+    @include flexbox(flex, row, center, center);
+  }
+
+  .main__header {
+    @include flexbox(flex, row, center, center);
+
+    &__title {
+      @include flexbox(flex, row, center, center);
+    }
+  }
+
+  .main__header__options {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+      margin-top: 20px;
+    }
+
+    .input-filter {
+      width: 330px;
+    }
+  }
+}
+
+@include respond-to('Tablet') {
+  .main__header {
+    @include flexbox(flex, column, end, space-between);
+    height: 150px;
+    width: 100%;
+
+    &__title {
+      width: 100%;
+    }
+  }
+}
+

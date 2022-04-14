@@ -41,11 +41,27 @@
     width: 100%;
     margin-top: 20px;
   }
+
+  .main__header {
+    @include flexbox(flex, column, center, space-between);
+    height: 100px;
+  }
 }
 
 @include respond-to('Laptop') {
   .main__content {
     @include flexbox(flex, row, center, center);
+  }
+}
+
+@include respond-to('Tablet') {
+  .main__header {
+    @include flexbox(flex, column, end, space-between);
+    width: 100%;
+
+    &__title {
+      width: 100%;
+    }
   }
 }
 

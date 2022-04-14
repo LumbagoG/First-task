@@ -60,7 +60,34 @@
     }
 
     &__bottom {
-      margin: 0 20px;
+      width: 100%;
+
+      .sidebar__item-active, .sidebar__item {
+        width: 90%;
+        background: radial-gradient(133.33% 2508.35% at -4.59% -10%, #32E6FF 0%, rgba(0, 255, 209, 0.81) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #43E8FF;
+        border-radius: 10px;
+        height: 45px;
+        padding-left: 10px;
+        margin-bottom: 0;
+
+        &-text {
+          width: 90%;
+        }
+      }
+
+      .sidebar__item-active {
+        .active {
+          color: #23273A;
+        }
+      }
+
+      .sidebar__item {
+        background: none;
+
+        &-text {
+          color: #fff;
+        }
+      }
     }
   }
 }
@@ -82,8 +109,15 @@
       margin: 32px 20px 127px 20px;
     }
 
-    &__item {
+    &__wrapper__bottom {
+      .sidebar__item, .sidebar__item-active {
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+      }
+    }
 
+    &__item {
       &-text {
         display: none;
       }
@@ -91,6 +125,10 @@
       &-img {
         width: 45px;
       }
+    }
+
+    &__item, &__item-active {
+      margin-top: 10px;
     }
   }
 }

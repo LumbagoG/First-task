@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!--  Styles  -->
-    <link rel="stylesheet" href="../../../src/assets/styles/index.css">
+    <link rel="stylesheet" href="../../../src/assets/styles/organizations.css">
 
     <!--  Scripts  -->
 </head>
@@ -24,7 +24,7 @@
 
             <!--  Sidebar elems  -->
             <a class="sidebar__item" href="../../../index.html">
-                <img src="../../../src/assets/images/components/sidebar/main-active.svg" alt="" class="sidebar__item-img">
+                <img src="../../../src/assets/images/components/sidebar/main.svg" alt="" class="sidebar__item-img">
                 <span class="sidebar__item-text">Главная</span>
             </a>
 
@@ -69,8 +69,8 @@
             </a>
 
             <a class="sidebar__item-active" href="../../../src/pages/organizations/organizations.html">
-                <img src="../../../src/assets/images/components/sidebar/organizations.svg" alt="" class="sidebar__item-img">
-                <span class="sidebar__item-text">Организации</span>
+                <img src="../../../src/assets/images/components/sidebar/organizations-active.svg" alt="" class="sidebar__item-img">
+                <span class="sidebar__item-text active">Организации</span>
             </a>
         </div>
     </aside>
@@ -87,6 +87,15 @@
             </div>
 
             <div class="main__header__options">
+                <a class="main__header__options__wrapper input-filter">
+                    <input id="input-filter" class="main__header__options__wrapper-input" placeholder="Поиск организации по ИНН или ОГРН"/>
+                    <label for="input-filter">
+                        <img class="input-filter-img" src="../../../src/assets/images/components/header/filter.svg" alt="">
+                    </label>
+                </a>
+                <a href="" class="main__header__options__wrapper button">
+                    Найти
+                </a>
                 <a href="" class="main__header__options__wrapper">
                     <img src="../../../src/assets/images/components/header/adding.png" alt="">
                 </a>
