@@ -316,18 +316,99 @@ body {
   flex-direction: row;
   align-items: start;
   justify-content: start;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 58px;
 }
 .main__content__wrapper {
   background: #383E57;
   box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.15);
   border-radius: 18px;
-  padding: 20px;
-  margin: 15.5px;
-  width: 340px;
-  height: 230px;
+  width: 1080px;
+  height: 789px;
+  overflow-x: scroll !important;
+}
+.main__content__wrapper::-webkit-scrollbar {
+  width: 15px;
+}
+.main__content__wrapper::-webkit-scrollbar-track {
+  background-color: #3E4459;
+  border-radius: 6px;
+}
+.main__content__wrapper::-webkit-scrollbar-thumb {
+  background-color: #23273A;
+  border-radius: 6px;
+}
+.main__content__wrapper-header-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0;
+  height: 52px;
+  margin-left: 28px;
+}
+.main__content__wrapper-header .edge {
+  margin-left: 5px;
+}
+.main__content__wrapper-header .edge img {
+  margin-right: 10px;
+}
+.main__content__wrapper-header-edit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0;
+  height: 52px;
+  margin-left: 5px;
+}
+.main__content__wrapper-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.main__content__wrapper-row-item:nth-child(1) {
+  width: 240px;
+}
+.main__content__wrapper-row-item:nth-child(2) {
+  width: 128px;
+}
+.main__content__wrapper-row-item:nth-child(3) {
+  width: 242px;
+}
+.main__content__wrapper-row-item:nth-child(4) {
+  width: 401px;
+}
+.main__content__wrapper-row-item:nth-child(5) {
+  width: 43px;
+}
+.main__content__wrapper .data-table * {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #A1A6BE;
+}
+.main__content__wrapper .data-table .main__content__wrapper-row-item {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+.main__content__wrapper .data-table .name {
+  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+.main__content__wrapper .data-table .edit {
+  border-left: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+.main__content__wrapper .data-table .edit img {
+  margin-left: 5px;
+}
+.main__content__wrapper .data-table .inn, .main__content__wrapper .data-table .director {
+  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 1024px) {

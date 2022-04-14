@@ -17,20 +17,123 @@
 // Content
 .main__content {
   @include flexbox(flex, row, start, start);
-  flex-wrap: wrap;
 
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 58px;
 
   // Wrapper
   &__wrapper {
     background: #383E57;
     box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.15);
     border-radius: 18px;
-    padding: 20px;
-    margin: 15.5px;
-    width: 340px;
-    height: 230px;
+    width: 1080px;
+    height: 789px;
+    overflow-x: scroll !important;
+
+    &::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #3E4459;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #23273A;
+      border-radius: 6px;
+    }
+
+    // Header table
+    &-header {
+
+      &-title {
+        @include flexbox(flex, row, center, start);
+
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+        letter-spacing: 0;
+        height: 52px;
+        margin-left: 28px;
+      }
+
+      & .edge {
+        margin-left: 5px;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+
+      &-edit {
+        @include flexbox(flex, row, center, start);
+
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+        letter-spacing: 0;
+        height: 52px;
+        margin-left: 5px;
+      }
+    }
+
+    &-row {
+      @include flexbox(flex, row, center, center);
+
+      &-item {
+        //padding: 30px 16px 75px 18px;
+
+        &:nth-child(1) {
+          width: 240px;
+        }
+
+        &:nth-child(2) {
+          width: 128px;
+        }
+
+        &:nth-child(3) {
+          width: 242px;
+        }
+
+        &:nth-child(4) {
+          width: 401px;
+        }
+
+        &:nth-child(5) {
+          width: 43px;
+        }
+      }
+    }
+
+    .data-table {
+      * {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #A1A6BE;
+      }
+
+      .main__content__wrapper-row-item {
+        border-top: 0.5px solid rgba(0, 0, 0, 0.5);
+      }
+
+      .name {
+        border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+      }
+
+      .edit {
+        border-left: 0.5px solid rgba(0, 0, 0, 0.5);
+
+        img {
+          margin-left: 5px;
+        }
+      }
+
+      .inn, .director {
+        border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+      }
+    }
   }
 }
 
