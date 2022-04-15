@@ -8,6 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +20,20 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #3E4459;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #23273A;
+  border-radius: 6px;
+}
+
 #date-alert {
   position: fixed;
   z-index: 10000;
@@ -26,6 +41,8 @@ body {
   bottom: 10px;
   right: 10px;
   text-align: right;
+  color: #43E8FF;
+  text-shadow: #43E8FF 0 0 20px;
 }
 
 @media (max-width: 425px) {
@@ -218,6 +235,7 @@ body {
 }
 .main__header__options .input-filter {
   margin-right: 25px;
+  margin-left: 25px;
   width: 465px;
   height: 36px;
 }
@@ -421,8 +439,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 100px;
+    width: 80%;
   }
 
   .main__header__options {
@@ -447,6 +466,9 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: 150px;
+    width: 60%;
+    margin: 0 auto;
   }
   .main__header__title {
     display: flex;

@@ -145,8 +145,9 @@
   }
 
   .main__header {
-    @include flexbox(flex, column, center, space-between);
+    @include flexbox(flex, column, center, center);
     height: 100px;
+    width: 80%;
   }
 
   .main__header__options {
@@ -167,6 +168,9 @@
 
   .main__header {
     @include flexbox(flex, row, center, center);
+    height: 150px;
+    width: 60%;
+    margin: 0 auto;
 
     &__title {
       @include flexbox(flex, row, center, center);

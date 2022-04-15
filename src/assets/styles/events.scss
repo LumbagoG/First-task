@@ -16,30 +16,243 @@
 
 // Content
 .main__content {
-  @include flexbox(flex, row, start, start);
+  @include flexbox(flex, row, center, center);
   flex-wrap: wrap;
-
+  margin-top: 60px;
   width: 100%;
-  margin-top: 20px;
+
+  // Wrapper col
+  &__wrapper-col {
+    @include flexbox(flex, column, center, center);
+    width: 525px;
+
+    &:first-child {
+      margin-right: 28px;
+    }
+  }
 
   // Wrapper
   &__wrapper {
+    width: 100%;
     background: #383E57;
     box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.15);
     border-radius: 18px;
-    padding: 20px;
-    margin: 15.5px;
-    width: 340px;
-    height: 230px;
+
+    &-button {
+      @include flexbox(flex, row, center, center);
+      padding: 7px 30px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: #43E8FF;
+      background: #23273A;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .submit {
+      width: 138px;
+      margin: 0 auto;
+    }
+
+    &-hr {
+      width: 100%;
+      color: #151E41;
+    }
   }
 
+  // Structure
+  .structure {
+    @include flexbox(flex, column, center, start);
+    height: 857px;
+
+    &-row {
+      margin-top: 25px;
+
+      &-text {
+        @include flexbox(flex, column, start, start);
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        margin-bottom: 22px;
+
+        &-under {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 16px;
+          color: #FF8991;
+          margin-top: 3px;
+        }
+
+        .under-normal {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: #FFFFFF;
+        }
+
+        &-top {
+          @include flexbox(flex, row, center, space-between);
+          width: 100%;
+        }
+
+        .top-normal {
+          @include flexbox(flex, row, center, start);
+
+          * {
+            margin: 5px 10px 10px 0;
+          }
+        }
+
+        .top-light {
+          @include flexbox(flex, row, center, start);
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 19px;
+          color: #A1A6BE;
+          margin: 5px 0 5px 0;
+        }
+      }
+    }
+
+    &-header {
+      @include flexbox(flex, column, center, space-between);
+      width: 466px;
+    }
+  }
+
+  // Forming
+  .forming {
+    @include flexbox(flex, column, start, start);
+    height: 166px;
+    margin-bottom: 26px;
+    padding: 20px;
+
+    &-row {
+      @include flexbox(flex, row, center, space-between);
+      width: 100%;
+      margin-bottom: 10px;
+
+      .text-1, .text-2, .text-3 {
+        white-space: nowrap;
+        width: 300px;
+        @include flexbox(flex, row, center, space-between);
+
+        &::after {
+          margin-left: 10px;
+        }
+      }
+
+      .text-1 {
+        &::after {
+          content: "_________________________";
+        }
+      }
+
+      .text-2 {
+        &::after {
+          content: "_______________________________";
+        }
+      }
+
+      .text-3 {
+        &::after {
+          content: "____________________________";
+        }
+      }
+
+      &-text {
+        width: 100%;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  // Check
+  .check {
+    @include flexbox(flex, column, center, start);
+    height: 665px;
+
+    &-row {
+      margin-top: 25px;
+
+      &-text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+      }
+
+      &-input {
+        width: 100%;
+        height: 56px;
+        margin-top: 6px;
+        margin-bottom: 30px;
+        background: #3E4459;
+        border-radius: 5px;
+        border: none;
+
+        &::placeholder {
+          position: absolute;
+          margin: 7px 10px;
+        }
+      }
+
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        border: none;
+      }
+
+      select {
+        width: 303px;
+      }
+    }
+
+    &-header {
+      @include flexbox(flex, column, start, start);
+      width: 466px;
+    }
+
+    &-body {
+      width: 466px;
+
+      .check-row-input {
+        height: 32px;
+        margin-bottom: 17px;
+      }
+
+      .select {
+
+      }
+    }
+  }
 }
 
 // Adaptation
 @include respond-to('Laptop L') {
   .main__content {
-    width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
+
+    &__wrapper {
+      margin-top: 50px;
+
+      &-col {
+
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   .main__header {
@@ -63,5 +276,54 @@
       width: 100%;
     }
   }
+
+  .structure {
+    flex-direction: column !important;
+    width: 385px !important;
+    height: 1000px !important;
+
+
+    &-row {
+      flex-direction: column !important;
+      margin-bottom: 50px !important;
+
+      a {
+        margin-top: 15px !important;
+      }
+    }
+
+    .main__content .structure-header {
+      width: 300px !important;
+    }
+
+    .structure-row-text {
+      width: 320px !important;
+    }
+  }
+
+  .forming {
+    flex-direction: column !important;
+    width: 385px !important;
+    height: 350px !important;
+
+    &-row {
+      flex-direction: column !important;
+      margin-bottom: 50px !important;
+
+      a {
+        margin-top: 15px !important;
+      }
+    }
+  }
+
+  .check {
+    height: 700px;
+    margin-top: 20px;
+
+    * {
+      width: 365px !important;
+    }
+  }
+
 }
 

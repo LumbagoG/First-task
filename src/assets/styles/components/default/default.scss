@@ -17,6 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
+  scroll-behavior: smooth;
 }
 
 // Body
@@ -27,6 +28,21 @@ body {
   overflow-x: hidden;
 }
 
+// Styles scroll
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #3E4459;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #23273A;
+  border-radius: 6px;
+}
+
 #date-alert {
   position: fixed;
   z-index: 10000;
@@ -34,6 +50,8 @@ body {
   bottom: 10px;
   right: 10px;
   text-align: right;
+  color: #43E8FF;
+  text-shadow: #43E8FF 0 0 20px;
 }
 
 // Adaptation
