@@ -7,7 +7,7 @@ const getTime = () => {
 }
 
 // For instant display on the page, without waiting for setInterval
-dateAlert.innerHTML = getTime();
+dateAlert.textContent = getTime();
 
 // Async refresh
 setInterval(() => {
